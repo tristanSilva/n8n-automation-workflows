@@ -76,6 +76,34 @@ Workflows being added:
 
 ---
 
+---
+
+## 🛰 NASA Workflow — Live API Monitor
+
+![NASA Workflow](assets/nasa-workflow.png)
+
+A scheduled workflow that queries NASA's DONKI API for solar flare 
+data, evaluates the result, and routes to separate endpoints 
+based on whether data was returned.
+
+**Workflow Steps:**
+
+| Step | Node | What it does |
+|---|---|---|
+| 1 | Schedule Trigger | Runs automatically on a defined schedule |
+| 2 | Get a DONKI solar flare | Calls NASA's live Space Weather API |
+| 3 | If (conditional) | Checks if solar flare data exists |
+| 4 | Postbin (True) | Sends data to endpoint if flare detected |
+| 5 | Postbin (False) | Sends fallback request if no data found |
+
+**Key concepts demonstrated:**
+- 🌐 External REST API integration (NASA DONKI)
+- 🔀 Conditional routing based on API response
+- 📡 Webhook output via Postbin
+- ⏱ Fully scheduled — zero manual intervention
+
+- 
+
 ## 🔗 Related Projects
 
 - [langchain-ollama-projects](https://github.com/tristanSilva/langchain-ollama-projects) — Local LLM experiments with LangChain + Ollama, including NagaBot (CLI chatbot with persistent memory)
