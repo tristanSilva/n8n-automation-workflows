@@ -88,4 +88,4 @@ Built by **Tristan Silva** — AI Automation Engineer with 25+ years in IT, spec
 
 📍 Naga City, Philippines · Open to remote AI Automation roles
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/tristansilva)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/silvatristanv)
