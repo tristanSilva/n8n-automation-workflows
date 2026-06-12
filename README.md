@@ -123,7 +123,7 @@ based on whether data was returned.
 
 ## 👤 About
 
-Built by **Tristan Silva** — AI Automation Engineer with 25+ years in IT, specializing in RPA (Blue Prism), LLM engineering, and intelligent workflow automation.
+Built by **Tristan Silva** — AI Automation Engineer, specializing in RPA, LLM engineering, and intelligent workflow automation.
 
 📍 Naga City, Philippines · Open to remote AI Automation roles
 
