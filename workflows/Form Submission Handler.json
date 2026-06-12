@@ -1,0 +1,158 @@
+{
+  "name": "Form Submission Handler",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "form-handler",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "e5f452fd-f96c-442d-a386-8fd4313b428a",
+      "name": "Webhook",
+      "webhookId": "c6785117-3957-45f1-adeb-f10f70d1080c"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "1af4d662-8826-4a42-ac5c-8922e648aa91",
+              "leftValue": "={{ $json.body.name && $json.body.email && $json.body.message }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        208,
+        0
+      ],
+      "id": "f9e981bd-33b4-41de-afd8-f3715bcb3e92",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "operation": "write",
+        "fileName": "form-submissions.csv",
+        "options": {
+          "append": true
+        }
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1.1,
+      "position": [
+        624,
+        -96
+      ],
+      "id": "b9955160-2fdb-40ed-833e-0bc74e972f89",
+      "name": "Save to CSV"
+    },
+    {
+      "parameters": {
+        "options": {
+          "fileName": "form-submissions.csv",
+          "headerRow": true
+        }
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        416,
+        -96
+      ],
+      "id": "e3e63893-0f65-4e78-8a49-b3102ecea57d",
+      "name": "Convert to CSV"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://localhost:5678/webhook-test/772d0ab3-9d42-45d3-b776-d4ab1ab97d2a",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        416,
+        96
+      ],
+      "id": "e6bb25e7-f023-43e0-9eb7-78eae54e0bb7",
+      "name": "Alert — Invalid Form"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Convert to CSV",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Alert — Invalid Form",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to CSV": {
+      "main": [
+        [
+          {
+            "node": "Save to CSV",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "2eae9805-e274-473a-8a5a-1636998241aa",
+  "meta": {
+    "instanceId": "d2361989c62578abdc9a95b9b1f432402aaba05401f9da3e5a59313efede28e3"
+  },
+  "nodeGroups": [],
+  "id": "Gb9ZidQOBnCzka0u",
+  "tags": []
+}
