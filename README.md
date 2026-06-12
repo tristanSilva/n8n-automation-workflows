@@ -131,6 +131,6 @@ based on whether data was returned.
 
 Built by **Tristan Silva** — AI Automation Engineer, specializing in RPA, LLM engineering, and intelligent workflow automation.
 
-📍 Naga City, Philippines · Open to remote AI Automation roles
+📍 Naga City, Philippines
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/silvatristanv)
