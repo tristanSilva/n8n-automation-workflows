@@ -102,7 +102,18 @@ based on whether data was returned.
 - 📡 Webhook output via Postbin
 - ⏱ Fully scheduled — zero manual intervention
 
-- 
+---
+
+---
+
+## 🛰 Github Activity Monitor Workflow — Live API Monitor
+
+![Github Activity Monitor Workflow](assets/github-monitor.png)
+
+A scheduled workflow that Poll your own GitHub API every hour then 
+log new commits, evaluates the result, and routes to separate endpoints 
+based on whether data was returned.
+
 
 ## 🔗 Related Projects
 
