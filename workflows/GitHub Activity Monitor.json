@@ -46,7 +46,7 @@
       "name": "HTTP Request",
       "credentials": {
         "httpHeaderAuth": {
-          "id": "lsW474ckwCoYuPYP",
+          "id": "------------------",
           "name": "Header Auth account"
         }
       }
@@ -88,7 +88,7 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "http://localhost:5678/webhook-test/772d0ab3-9d42-45d3-b776-d4ab1ab97d2a",
+        "url": "----------------------------------------------",
         "options": {}
       },
       "type": "n8n-nodes-base.httpRequest",
@@ -103,7 +103,7 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "http://localhost:5678/webhook-test/772d0ab3-9d42-45d3-b776-d4ab1ab97d2a",
+        "url": "----------------------------------------------",
         "options": {}
       },
       "type": "n8n-nodes-base.httpRequest",
